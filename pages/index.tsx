@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header label="Inicio" />
       <Form placeholder="¿Qué está pasando?" />
-      
+      <Feed posts={[1, 2, 3]} />
     </>
   )
 }

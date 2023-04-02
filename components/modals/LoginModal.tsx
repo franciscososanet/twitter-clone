@@ -25,7 +25,7 @@ const LoginModal = () => {
         password,
       });
 
-      toast.success('Sesión iniciada');
+      toast.success('Logged in');
 
       loginModal.onClose();
     } catch (error) {
@@ -49,7 +49,7 @@ const LoginModal = () => {
         disabled={isLoading}  
       />
       <Input 
-        placeholder="Contraseña"
+        placeholder="Password"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -60,7 +60,7 @@ const LoginModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>¿Primera vez en Nala?
+      <p>First time using Twitter?
         <span 
           onClick={onToggle} 
           className="
@@ -68,7 +68,7 @@ const LoginModal = () => {
             cursor-pointer 
             hover:underline
           "
-          > Creá tu cuenta</span>
+          > Create an account</span>
       </p>
     </div>
   )

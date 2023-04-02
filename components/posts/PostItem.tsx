@@ -12,9 +12,9 @@ const PostItem = () => {
   const loginModal = useLoginModal();
   const { data: currentUser } = useCurrentUser();
   
-  const goToProfile = useCallback((ev: any) => {
+  const goToUser = useCallback((ev: any) => {
     ev.stopPropagation();
-    router.push('/perfiles/123')
+    router.push('/users/123')
   }, [router]);
 
   const goToPost = useCallback(() => {
@@ -41,34 +41,34 @@ const PostItem = () => {
         transition
       ">
       <div className="flex flex-row items-start gap-3">
-        <Avatar href="/perfiles/123" />
+        <Avatar href="/users/123" />
         <div>
           <div className="flex flex-row items-center gap-2">
             <p 
-              onClick={goToProfile} 
+              onClick={goToUser} 
               className="
                 text-white 
                 font-semibold 
                 cursor-pointer 
                 hover:underline
             ">
-              Elon Musk
+              Nombre de usuario
             </p>
             <span 
-              onClick={goToProfile} 
+              onClick={goToUser} 
               className="
                 text-neutral-500
                 cursor-pointer
                 hover:underline
             ">
-              @elonmusk
+              @nombredeusuario
             </span>
             <span className="text-neutral-500">
               2h
             </span>
           </div>
           <div className="text-white mt-1">
-            This is my very real Tweet!
+            Tweet de prueba
           </div>
           <div className="flex flex-row items-center mt-3 gap-10">
             <div 

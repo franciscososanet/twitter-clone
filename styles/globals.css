@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-    @apply h-full bg-black;
+  height: 100%;
 }
 
-body{
-    @apply h-full bg-black;
+
+body {
+  height: 100%;
 }

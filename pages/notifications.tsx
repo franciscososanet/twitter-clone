@@ -24,7 +24,7 @@ export async function getServerSideProps(context: NextPageContext) {
 const Notifications = () => {
   return ( 
     <>
-      <Header showBackArrow label="Notificaciones" />
+      <Header showBackArrow label="Notifications" />
     </>
    );
 }

@@ -1,39 +1,41 @@
-import { signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { BiLogOut } from 'react-icons/bi';
 import { BsHouseFill, BsBellFill } from 'react-icons/bs';
 import { FaHashtag, FaUser } from 'react-icons/fa';
+
+import useCurrentUser from '@/hooks/useCurrentUser';
 
 import SidebarItem from './SidebarItem';
 import SidebarLogo from './SidebarLogo';
 import SidebarTweetButton from './SidebarTweetButton';
 
-const items = [
-  {
-    icon: BsHouseFill,
-    label: 'Inicio',
-    href: '/',
-  },
-  {
-    icon: FaHashtag,
-    label: 'Explorar',
-    href: '/explorar',
-  },
-  {
-    icon: BsBellFill,
-    label: 'Notificaciones',
-    href: '/notificaciones',
-    auth: true,
-  },
-  {
-    icon: FaUser,
-    label: 'Perfil',
-    href: '/perfiles/123',
-    auth: true,
-  },
-]
-
 const Sidebar = () => {
-  const session = useSession();
+  const { data: currentUser } = useCurrentUser();
+
+  const items = [
+    {
+      icon: BsHouseFill,
+      label: 'Inicio',
+      href: '/',
+    },
+    {
+      icon: FaHashtag,
+      label: 'Explorar',
+      href: '/search',
+    },
+    {
+      icon: BsBellFill,
+      label: 'Notificaciones',
+      href: '/notifications',
+      auth: true,
+    },
+    {
+      icon: FaUser,
+      label: 'Mi perfil',
+      href: `/users/${currentUser?.id}`,
+      auth: true,
+    },
+  ]
 
   return (
     <div className="col-span-1 h-full pr-4 md:pr-6">
@@ -49,7 +51,7 @@ const Sidebar = () => {
                 label={item.label}
               />
             ))}
-            {session.data && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Cerrar sesión" />}
+            {currentUser && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Cerrar sesión" />}
             <SidebarTweetButton />
           </div>
         </div>
