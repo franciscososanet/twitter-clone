@@ -25,11 +25,11 @@ const LoginModal = () => {
         password,
       });
 
-      toast.success('Logged in');
+      toast.success('Sesión iniciada');
 
       loginModal.onClose();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('Algo salió mal');
     } finally {
       setIsLoading(false);
     }
@@ -49,7 +49,7 @@ const LoginModal = () => {
         disabled={isLoading}  
       />
       <Input 
-        placeholder="Password"
+        placeholder="Contraseña"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -60,7 +60,7 @@ const LoginModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>First time using Twitter?
+      <p>¿Primera vez acá?
         <span 
           onClick={onToggle} 
           className="
@@ -68,7 +68,7 @@ const LoginModal = () => {
             cursor-pointer 
             hover:underline
           "
-          > Create an account</span>
+          > Creá tu cuenta</span>
       </p>
     </div>
   )
@@ -77,8 +77,8 @@ const LoginModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title="Login"
-      actionLabel="Sign in"
+      title="Iniciar sesión"
+      actionLabel="Iniciar sesión"
       onClose={loginModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}

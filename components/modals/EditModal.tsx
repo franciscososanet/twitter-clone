@@ -38,11 +38,11 @@ const EditModal = () => {
       await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
-      toast.success('Updated');
+      toast.success('Actualizado');
 
       editModal.onClose();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('Algo salió mal');
     } finally {
       setIsLoading(false);
     }
@@ -50,22 +50,22 @@ const EditModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <ImageUpload value={profileImage} disabled={isLoading} onChange={(image) => setProfileImage(image)} label="Upload profile image" />
-      <ImageUpload value={coverImage} disabled={isLoading} onChange={(image) => setCoverImage(image)} label="Upload cover image" />
+      <ImageUpload value={profileImage} disabled={isLoading} onChange={(image) => setProfileImage(image)} label="Subir imagen de perfil" />
+      <ImageUpload value={coverImage} disabled={isLoading} onChange={(image) => setCoverImage(image)} label="Subir imagen de portada" />
       <Input
-        placeholder="Name"
+        placeholder="Nombre completo"
         onChange={(e) => setName(e.target.value)}
         value={name}
         disabled={isLoading}  
       />
       <Input 
-        placeholder="Username"
+        placeholder="Nombre de usuario"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
         disabled={isLoading} 
       />
       <Input 
-        placeholder="Bio"
+        placeholder="Biografía"
         onChange={(e) => setBio(e.target.value)}
         value={bio}
         disabled={isLoading} 
@@ -77,8 +77,8 @@ const EditModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={editModal.isOpen}
-      title="Edit your profile"
-      actionLabel="Save"
+      title="Editá tu perfil"
+      actionLabel="Guardar"
       onClose={editModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}

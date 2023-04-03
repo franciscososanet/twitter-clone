@@ -30,7 +30,7 @@ const SearchBar = () => {
         outline-none
         transition
       "
-      placeholder="Search Twitter" />
+      placeholder="Buscar..." />
       <BsSearch size={18} className="
         text-neutral-400 
         absolute 
