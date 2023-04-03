@@ -106,8 +106,8 @@ const RegisterModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Crear cuenta nueva"
-      actionLabel="Registrarme"
+      title="Create an account"
+      actionLabel="Register"
       onClose={registerModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}

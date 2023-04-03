@@ -6,8 +6,8 @@ import RegisterModal from "@/components/modals/RegisterModal"
 export default function Home() {
   return (
     <>
-      <Header label="Inicio" />
-      <Form placeholder="¿Qué está pasando?" />
+      <Header label="Home" />
+      <Form placeholder="What's happening?" />
       <Feed posts={[1, 2, 3]} />
     </>
   )

@@ -49,7 +49,7 @@ const LoginModal = () => {
         disabled={isLoading}  
       />
       <Input 
-        placeholder="Contraseña"
+        placeholder="Password"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -60,7 +60,7 @@ const LoginModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>¿Primera vez usando Nala?
+      <p>First time using Twitter?
         <span 
           onClick={onToggle} 
           className="
@@ -68,7 +68,7 @@ const LoginModal = () => {
             cursor-pointer 
             hover:underline
           "
-          > Creá tu cuenta</span>
+          > Create an account</span>
       </p>
     </div>
   )
@@ -77,8 +77,8 @@ const LoginModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title="Iniciar sesión"
-      actionLabel="Iniciar sesión"
+      title="Login"
+      actionLabel="Sign in"
       onClose={loginModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
